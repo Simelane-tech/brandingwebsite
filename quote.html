@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - Bentoks Investments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght=700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utilities.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+    <script src="main.js" defer></script>
+    <script src="api.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F7FA',
+                        foreground: '#1A202C',
+                        card: '#FFFFFF',
+                        muted: '#E2E8F0',
+                        'muted-foreground': '#64748B',
+                        primary: '#003399',
+                        secondary: '#CC0000',
+                        accent: '#003399',
+                        border: 'rgba(0, 51, 153, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background-color: #F5F7FA; color: #1A202C; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 51, 153, 0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 51, 153, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 51, 153, 0.6); }
+        .material-icons { vertical-align: middle; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+        <my-header></my-header><div class="pt-16 min-h-screen bg-[#F5F7FA]">
+        <section class="py-24 border-b border-[#003399]/5 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Get Pricing</div>
+            <h1 class="font-heading font-bold text-5xl lg:text-6xl text-[#1A202C] leading-tight">REQUEST A <span class="text-[#003399]">QUOTE</span></h1>
+            <p class="text-[#1A202C]/45 text-base mt-4 max-w-md leading-relaxed">Fill in the form and we will respond with a detailed proposal within 24 hours.</p>
+        </section>
+
+        <section class="py-16 max-w-2xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center mb-12">
+                <div class="flex items-center flex-1 last:flex-none">
+                    <div class="flex items-center gap-2"><div class="w-7 h-7 flex items-center justify-center text-xs font-heading font-bold border transition-all border-[#003399] text-[#003399]" id="step-1-indicator">1</div><span class="hidden sm:block text-xs tracking-wide uppercase text-[#1A202C]/40">Contact Info</span></div>
+                    <div class="flex-1 h-px mx-3 transition-colors bg-[#003399]/8" id="step-line-1"></div>
+                </div>
+                <div class="flex items-center flex-1 last:flex-none">
+                    <div class="flex items-center gap-2 opacity-50" id="step-2-wrapper"><div class="w-7 h-7 flex items-center justify-center text-xs font-heading font-bold border transition-all border-[#1A202C]/20 text-[#1A202C]/30" id="step-2-indicator">2</div><span class="hidden sm:block text-xs tracking-wide uppercase text-[#1A202C]/40">Project Details</span></div>
+                    <div class="flex-1 h-px mx-3 transition-colors bg-[#003399]/8" id="step-line-2"></div>
+                </div>
+                <div class="flex items-center flex-1 last:flex-none">
+                    <div class="flex items-center gap-2 opacity-50" id="step-3-wrapper"><div class="w-7 h-7 flex items-center justify-center text-xs font-heading font-bold border transition-all border-[#1A202C]/20 text-[#1A202C]/30" id="step-3-indicator">3</div><span class="hidden sm:block text-xs tracking-wide uppercase text-[#1A202C]/40">Confirmation</span></div>
+                </div>
+            </div>
+
+            <div id="quote-step-1">
+                <div class="space-y-4">
+                    <h2 class="font-heading font-semibold text-2xl text-[#1A202C] mb-6">YOUR CONTACT INFORMATION</h2>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Full Name *</label><input type="text" id="quote-name" required class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="Your full name"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Company / Organisation</label><input type="text" id="quote-company" class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="Company name"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Email Address *</label><input type="email" id="quote-email" required class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="your@email.com"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Phone / WhatsApp *</label><input type="tel" id="quote-phone" required class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="+268 7632 0436"></div>
+                    <button onclick="goToQuoteStep(2)" class="w-full mt-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.2em] uppercase py-4 transition-colors flex items-center justify-center gap-2">Next Step <span class="material-icons">arrow_forward</span></button>
+                </div>
+            </div>
+
+            <div id="quote-step-2" class="hidden">
+                <div class="space-y-4">
+                    <h2 class="font-heading font-semibold text-2xl text-[#1A202C] mb-6">PROJECT DETAILS</h2>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Service Required *</label>
+                        <select id="quote-service" required class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C]/75 text-sm px-4 py-3 outline-none transition-colors">
+                            <option value="">Select a service</option>
+                            <option value="T-Shirt Printing">T-Shirt Printing</option>
+                            <option value="Banners & Posters">Banners & Posters</option>
+                            <option value="Billboards Printing">Billboards Printing</option>
+                            <option value="Custom Designs">Custom Designs</option>
+                            <option value="Vehicle Branding">Vehicle Branding</option>
+                            <option value="Signage">Signage</option>
+                            <option value="Flyers & Advertising Prints">Flyers & Advertising Prints</option>
+                            <option value="Business Cards">Business Cards</option>
+                            <option value="Brochures">Brochures</option>
+                        </select>
+                    </div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Quantity / Scale</label><input type="text" id="quote-quantity" class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="e.g. 500 units, 3 vehicles, 1 billboard"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Required Deadline</label><input type="text" id="quote-deadline" class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="e.g. 15 August 2024"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Estimated Budget (SZL)</label><input type="text" id="quote-budget" class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors" placeholder="e.g. E5,000 – E15,000"></div>
+                    <div><label class="block text-[#1A202C]/40 text-xs tracking-[0.15em] uppercase mb-2">Project Description *</label><textarea id="quote-details" required rows="5" class="w-full bg-[#FFFFFF] border border-[#003399]/8 focus:border-[#003399]/40 text-[#1A202C] placeholder-[#1A202C]/20 text-sm px-4 py-3 outline-none transition-colors resize-none" placeholder="Describe your project, requirements, specifications, and any reference examples..."></textarea></div>
+                    <div class="flex gap-3 pt-2">
+                        <button onclick="goToQuoteStep(1)" class="flex-1 border border-[#003399]/10 hover:border-[#003399]/20 text-[#1A202C]/45 hover:text-[#1A202C] font-heading font-semibold text-xs tracking-[0.2em] uppercase py-4 transition-all flex items-center justify-center gap-2"><span class="material-icons">arrow_back</span> Back</button>
+                        <button onclick="submitQuoteForm()" class="flex-1 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.2em] uppercase py-4 transition-colors flex items-center justify-center gap-2"><span class="material-icons">send</span> Submit Quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quote-step-3" class="hidden">
+                <div class="text-center py-12">
+                    <div class="w-20 h-20 bg-[#003399]/8 border border-[#003399]/25 flex items-center justify-center mx-auto mb-6"><span class="material-icons text-[#003399] text-4xl">check_circle</span></div>
+                    <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">QUOTE REQUEST SUBMITTED!</h2>
+                    <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-2 max-w-sm mx-auto">Thank you, <strong class="text-[#1A202C]/80" id="quote-thank-name">valued client</strong>. We will review your requirements and respond within 24 hours with a detailed proposal.</p>
+                    <p class="text-[#1A202C]/25 text-xs mb-10">Reference: <span id="quote-ref"></span></p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <button onclick="resetQuoteForm()" class="border border-[#003399]/10 hover:border-[#003399]/20 text-[#1A202C]/45 hover:text-[#1A202C] font-heading font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all">Submit Another</button>
+                        <a href="index.html" class="bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-colors">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-[#003399] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="src/bentoks_logo.png" alt="Bentoks Investments Logo" class="h-20 w-auto" />
+                    </a>
+                    <p class="text-white/35 text-xs leading-relaxed mb-6">High-quality printing that brings your brand to life. We specialize in billboards, banners, t-shirts, and custom prints for businesses and individuals since 2017.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">SERVICES</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="services.html#T-Shirt" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">T-Shirt Printing</a></li>
+                        <li><a href="services.html#Banners" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Banners & Posters</a></li>
+                        <li><a href="services.html#Billboards" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Billboards Printing</a></li>
+                        <li><a href="services.html#Custom" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Custom Designs</a></li>
+                        <li><a href="services.html#Vehicle" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Vehicle Branding</a></li>
+                        <li><a href="services.html#Signage" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Signage</a></li>
+                        <li><a href="services.html#Flyers" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Flyers & Advertising Prints</a></li>
+                        <li><a href="services.html#Business" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Business Cards</a></li>
+                        <li><a href="services.html#Brochures" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Brochures</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">COMPANY</h4>
+                    <ul class="space-y-2.5 mb-8">
+                        <li><a href="about.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Portfolio</a></li>
+                        <li><a href="services.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Services</a></li>
+                        <li><a href="contact.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Contact Us</a></li>
+                        <li><a href="quote.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Request a Quote</a></li>
+                    </ul>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-4">CONTACT</h4>
+                    <div class="space-y-2.5">
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">location_on</span>Mbabane, Sidwashini Ind.site, Zenkosi Complex, Block A, Office A2</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">phone</span>+268 7632 0436 / +268 7932 0436 / 3402 9328</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">mail</span>ntokozographics@gmail.com / bentoksinvestments@gmail.com</div>
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">mail</span>P.O. Box 8740, Mbabane H100, Eswatini</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">NEWSLETTER</h4>
+                    <p class="text-white/35 text-xs leading-relaxed mb-4">Latest branding trends delivered to your inbox.</p>
+                    <form onsubmit="submitNewsletterSubscribe(event, this)" class="space-y-2">
+                        <input type="email" required placeholder="Your email" class="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 text-xs px-3 py-2.5 outline-none focus:border-white/50 transition-colors" />
+                        <button type="submit" class="w-full bg-[#CC0000] hover:bg-[#DD0000] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase py-2.5 transition-colors flex items-center justify-center gap-1.5">
+                            <span class="material-icons">mail</span> Subscribe
+                        </button>
+                    </form>
+                    <div id="newsletter-success" class="flex items-center gap-2 text-white text-xs hidden"><span class="material-icons">check_circle</span> Subscribed — thank you!</div>
+                    <div class="mt-8">
+                        <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-3">HOURS</h4>
+                        <div class="space-y-1.5 text-xs">
+                            <div class="flex justify-between text-white/35"><span>Mon – Fri</span><span>08:00 – 17:00</span></div>
+                            <div class="flex justify-between text-white/35"><span>Saturday</span><span>08:00 – 13:00</span></div>
+                            <div class="flex justify-between text-white/20"><span>Sunday</span><span>Closed</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-white/30 text-xs">© 2026 Bentoks Investments. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/26876320436?text=Hello%20Bentoks%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1EBE5D] shadow-xl shadow-[#25D366]/30 flex items-center justify-center transition-all hover:scale-110 group" style="border-radius:50%">
+        <span class="material-icons text-white text-2xl">chat</span>
+        <div class="absolute right-full mr-3 bg-[#003399] text-white text-xs px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-xl pointer-events-none">Chat on WhatsApp</div>
+    </a><script>
+        
+        let quoteStep = 1;
+        function goToQuoteStep(step) {
+            quoteStep = step;
+            document.getElementById('quote-step-1').classList.add('hidden');
+            document.getElementById('quote-step-2').classList.add('hidden');
+            document.getElementById('quote-step-3').classList.add('hidden');
+            document.getElementById('quote-step-' + step).classList.remove('hidden');
+            for (let i = 1; i <=3; i++) {
+                const indicator = document.getElementById('step-' + i + '-indicator');
+                const wrapper = document.getElementById('step-' + i + '-wrapper');
+                const line = document.getElementById('step-line-' + i);
+                if (i < step) {
+                    indicator.innerHTML = '<span class="material-icons text-sm">check</span>';
+                    indicator.classList.add('bg-[#003399]', 'border-[#003399]', 'text-white');
+                    indicator.classList.remove('border-[#1A202C]/20', 'text-[#1A202C]/30');
+                    if (wrapper) wrapper.classList.remove('opacity-50');
+                    if (wrapper) wrapper.classList.add('opacity-100');
+                    if (line) line.classList.add('bg-[#003399]/40');
+                    if (line) line.classList.remove('bg-[#003399]/8');
+                } else if (i === step) {
+                    indicator.textContent = i;
+                    indicator.classList.add('border-[#003399]', 'text-[#003399]');
+                    indicator.classList.remove('bg-[#003399]', 'border-[#1A202C]/20', 'text-[#1A202C]/30');
+                    if (wrapper) wrapper.classList.remove('opacity-50');
+                    if (wrapper) wrapper.classList.add('opacity-100');
+                } else {
+                    indicator.textContent = i;
+                    indicator.classList.remove('bg-[#003399]', 'border-[#003399]', 'text-[#003399]');
+                    indicator.classList.add('border-[#1A202C]/20', 'text-[#1A202C]/30');
+                    if (wrapper) wrapper.classList.add('opacity-50');
+                    if (wrapper) wrapper.classList.remove('opacity-100');
+                    if (line) line.classList.remove('bg-[#003399]/40');
+                    if (line) line.classList.add('bg-[#003399]/8');
+                }
+            }
+            if (step === 3) {
+                const name = document.getElementById('quote-name').value;
+                document.getElementById('quote-thank-name').textContent = name || 'valued client';
+                // NOTE: This used to also set quote-ref to a brand-new client-side
+                // 'BNT-' + Date.now() value here, which ran AFTER api.js had already
+                // written the real server-issued reference into #quote-ref — silently
+                // replacing it with a different number a few milliseconds later. That
+                // meant the popup toast, the on-page reference, and the reference in
+                // the actual email (all generated server-side) could disagree. The
+                // server response is now the single source of truth for the
+                // reference number; it's set once, in api.js, right before this
+                // function runs, and is left untouched here.
+            }
+        }
+        function resetQuoteForm() {
+            document.getElementById('quote-name').value = '';
+            document.getElementById('quote-company').value = '';
+            document.getElementById('quote-email').value = '';
+            document.getElementById('quote-phone').value = '';
+            document.getElementById('quote-service').value = '';
+            document.getElementById('quote-quantity').value = '';
+            document.getElementById('quote-deadline').value = '';
+            document.getElementById('quote-budget').value = '';
+            document.getElementById('quote-details').value = '';
+            goToQuoteStep(1);
+        }
+        
+    </script>
+</body>
+</html>

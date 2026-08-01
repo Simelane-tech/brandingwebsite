@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Bentoks Investments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="utilities.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+    <script src="main.js" defer></script>
+    <script src="api.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F7FA',
+                        foreground: '#1A202C',
+                        card: '#FFFFFF',
+                        muted: '#E2E8F0',
+                        'muted-foreground': '#64748B',
+                        primary: '#003399',
+                        secondary: '#CC0000',
+                        accent: '#003399',
+                        border: 'rgba(0, 51, 153, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background-color: #F5F7FA; color: #1A202C; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 51, 153, 0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 51, 153, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 51, 153, 0.6); }
+        .material-icons { vertical-align: middle; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Quote button styles */
+        .quote-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .quote-btn:hover::after {
+            left: 100%;
+        }
+        .quote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 51, 153, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+        <my-header></my-header><div class="pt-16 min-h-screen bg-[#F5F7FA]">
+        <section class="py-24 border-b border-[#003399]/5 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">What We Offer</div>
+            <h1 class="font-heading font-bold text-5xl lg:text-7xl text-[#1A202C] leading-tight">OUR <span class="text-[#003399]">SERVICES</span></h1>
+            <p class="text-[#1A202C]/45 text-lg max-w-lg mt-4 leading-relaxed">Professional printing solutions that make your brand stand out — from t-shirts to billboards.</p>
+        </section>
+
+        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="space-y-20">
+                <!-- T-Shirt Printing -->
+                <div id="T-Shirt" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF]"><img src="src/clothing.jpg" alt="T-Shirt Printing" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">checkroom</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">T-Shirt Printing</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Custom t-shirt designs for businesses, events and personal use. High-quality prints that last wash after wash.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Banners & Posters -->
+                <div id="Banners" class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF] lg:col-start-2"><img src="src/banner printing.jpg" alt="Banners & Posters" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">flag</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Banners & Posters</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Vibrant banners for your business or event, available in various sizes and materials for indoor and outdoor use.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Billboards Printing -->
+                <div id="Billboards" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF]"><img src="src/billboard printing.jpg" alt="Billboards Printing" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">campaign</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Billboards Printing</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">High quality, eye-catching billboard designs for impactful advertising that grabs attention.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Custom Designs -->
+                <div id="Custom" class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF] lg:col-start-2"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=460&fit=crop&auto=format" alt="Custom Designs" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">palette</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Custom Designs</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Creative, custom-designed prints tailored to your needs — our design team brings your ideas to life.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle Branding -->
+                <div id="Vehicle" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF]"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=700&h=460&fit=crop&auto=format" alt="Vehicle Branding" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">directions_car</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Vehicle Branding</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Turn your vehicles into mobile billboards with professional vehicle graphics and wraps.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Signage -->
+                <div id="Signage" class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF] lg:col-start-2"><img src="src/signage.jpg" alt="Signage" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">description</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Signage</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">High-quality signage solutions for your business — from shop fronts to indoor directional signs.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Flyers & Advertising Prints -->
+                <div id="Flyers" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF]"><img src="src/marketing.jpg" alt="Flyers & Advertising Prints" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">description</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Flyers & Advertising Prints</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Professional flyers, leaflets, and promotional prints to boost your marketing campaigns.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Business Cards -->
+                <div id="Business" class="grid lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF] lg:col-start-2"><img src="src/business card.jpg" alt="Business Cards" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">badge</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Business Cards</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Premium business cards that make a lasting first impression, available in various finishes.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brochures -->
+                <div id="Brochures" class="grid lg:grid-cols-2 gap-12 items-center scroll-mt-24">
+                    <div class="overflow-hidden bg-[#FFFFFF]"><img src="src/flyer.jpg" alt="Brochures" class="w-full h-80 object-cover"></div>
+                    <div>
+                        <div class="w-12 h-12 border border-[#003399]/30 bg-[#003399]/8 flex items-center justify-center mb-5"><span class="material-icons text-[#003399] text-2xl">menu_book</span></div>
+                        <h2 class="font-heading font-bold text-3xl text-[#1A202C] mb-4">Brochures</h2>
+                        <p class="text-[#1A202C]/50 text-sm leading-relaxed mb-6">Professional brochures to showcase your products and services in style.</p>
+                        <a href="quote.html" class="quote-btn inline-flex items-center gap-2 bg-[#003399] hover:bg-[#0047AB] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase px-6 py-3 transition-all">
+                            <span class="material-icons text-sm">send</span> Request a Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#FFFFFF]">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Common Questions</div>
+                    <h2 class="font-heading font-bold text-4xl text-[#1A202C]">FREQUENTLY ASKED QUESTIONS</h2>
+                </div>
+                <div class="space-y-1.5">
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/10 transition-colors">
+                        <button onclick="toggleFaq(0)" class="w-full flex items-start justify-between px-6 py-5 text-left gap-4"><span class="text-[#1A202C]/75 text-sm leading-relaxed">What is your typical project turnaround time?</span><span class="material-icons text-[#003399] flex-shrink-0 mt-0.5" id="faq-icon-0">add</span></button>
+                        <div class="px-6 pb-5 text-[#1A202C]/40 text-sm leading-relaxed border-t border-[#003399]/5 pt-4 hidden" id="faq-answer-0">Standard projects are completed within 5–10 business days. Rush orders can be accommodated with advance notice.</div>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/10 transition-colors">
+                        <button onclick="toggleFaq(1)" class="w-full flex items-start justify-between px-6 py-5 text-left gap-4"><span class="text-[#1A202C]/75 text-sm leading-relaxed">Do you offer design services if I don't have artwork?</span><span class="material-icons text-[#003399] flex-shrink-0 mt-0.5" id="faq-icon-1">add</span></button>
+                        <div class="px-6 pb-5 text-[#1A202C]/40 text-sm leading-relaxed border-t border-[#003399]/5 pt-4 hidden" id="faq-answer-1">Absolutely! Our in-house creative team can develop complete designs from scratch.</div>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/10 transition-colors">
+                        <button onclick="toggleFaq(2)" class="w-full flex items-start justify-between px-6 py-5 text-left gap-4"><span class="text-[#1A202C]/75 text-sm leading-relaxed">Can you handle large corporate orders?</span><span class="material-icons text-[#003399] flex-shrink-0 mt-0.5" id="faq-icon-2">add</span></button>
+                        <div class="px-6 pb-5 text-[#1A202C]/40 text-sm leading-relaxed border-t border-[#003399]/5 pt-4 hidden" id="faq-answer-2">Yes! We specialise in large orders and have the production capacity for high-volume requirements.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-[#003399] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="src/bentoks_logo.png" alt="Bentoks Investments Logo" class="h-20 w-auto" />
+                    </a>
+                    <p class="text-white/35 text-xs leading-relaxed mb-6">High-quality printing that brings your brand to life. We specialize in billboards, banners, t-shirts, and custom prints for businesses and individuals since 2017.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">SERVICES</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="services.html#T-Shirt" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">T-Shirt Printing</a></li>
+                        <li><a href="services.html#Banners" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Banners & Posters</a></li>
+                        <li><a href="services.html#Billboards" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Billboards Printing</a></li>
+                        <li><a href="services.html#Custom" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Custom Designs</a></li>
+                        <li><a href="services.html#Vehicle" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Vehicle Branding</a></li>
+                        <li><a href="services.html#Signage" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Signage</a></li>
+                        <li><a href="services.html#Flyers" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Flyers & Advertising Prints</a></li>
+                        <li><a href="services.html#Business" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Business Cards</a></li>
+                        <li><a href="services.html#Brochures" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Brochures</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">COMPANY</h4>
+                    <ul class="space-y-2.5 mb-8">
+                        <li><a href="about.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Portfolio</a></li>
+                        <li><a href="services.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Services</a></li>
+                        <li><a href="contact.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Contact Us</a></li>
+                        <li><a href="quote.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Request a Quote</a></li>
+                    </ul>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-4">CONTACT</h4>
+                    <div class="space-y-2.5">
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">location_on</span>Mbabane, Sidwashini Ind.site, Zenkosi Complex, Block A, Office A2</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">phone</span>+268 7632 0436 / +268 7932 0436 / 3402 9328</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">mail</span>ntokozographics@gmail.com / bentoksinvestments@gmail.com</div>
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">mail</span>P.O. Box 8740, Mbabane H100, Eswatini</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">NEWSLETTER</h4>
+                    <p class="text-white/35 text-xs leading-relaxed mb-4">Latest branding trends delivered to your inbox.</p>
+                    <form onsubmit="submitNewsletterSubscribe(event, this)" class="space-y-2">
+                        <input type="email" required placeholder="Your email" class="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 text-xs px-3 py-2.5 outline-none focus:border-white/50 transition-colors" />
+                        <button type="submit" class="w-full bg-[#CC0000] hover:bg-[#DD0000] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase py-2.5 transition-colors flex items-center justify-center gap-1.5">
+                            <span class="material-icons">mail</span> Subscribe
+                        </button>
+                    </form>
+                    <div id="newsletter-success" class="flex items-center gap-2 text-white text-xs hidden"><span class="material-icons">check_circle</span> Subscribed — thank you!</div>
+                    <div class="mt-8">
+                        <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-3">HOURS</h4>
+                        <div class="space-y-1.5 text-xs">
+                            <div class="flex justify-between text-white/35"><span>Mon – Fri</span><span>08:00 – 17:00</span></div>
+                            <div class="flex justify-between text-white/35"><span>Saturday</span><span>08:00 – 13:00</span></div>
+                            <div class="flex justify-between text-white/20"><span>Sunday</span><span>Closed</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-white/30 text-xs">© 2026 Bentoks Investments. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/26876320436?text=Hello%20Bentoks%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1EBE5D] shadow-xl shadow-[#25D366]/30 flex items-center justify-center transition-all hover:scale-110 group" style="border-radius:50%">
+        <span class="material-icons text-white text-2xl">chat</span>
+        <div class="absolute right-full mr-3 bg-[#003399] text-white text-xs px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-xl pointer-events-none">Chat on WhatsApp</div>
+    </a><script>
+        
+        function toggleFaq(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            if (answer.classList.contains('hidden')) {
+                document.querySelectorAll('[id^="faq-answer-"]').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.textContent = 'add');
+                answer.classList.remove('hidden');
+                icon.textContent = 'remove';
+            } else {
+                answer.classList.add('hidden');
+                icon.textContent = 'add';
+            }
+        }
+        
+    </script>
+</body>
+</html>

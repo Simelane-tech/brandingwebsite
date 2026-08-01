@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Bentoks Investments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="utilities.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js"></script>
+    <script src="main.js" defer></script>
+    <script src="api.js" defer></script>
+    <script type=module src=main.js></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F5F7FA',
+                        foreground: '#1A202C',
+                        card: '#FFFFFF',
+                        muted: '#E2E8F0',
+                        'muted-foreground': '#64748B',
+                        primary: '#003399',
+                        secondary: '#CC0000',
+                        accent: '#003399',
+                        border: 'rgba(0, 51, 153, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background-color: #F5F7FA; color: #1A202C; }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 51, 153, 0.3); }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 51, 153, 0.6); }
+        .material-icons { vertical-align: middle; }
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+    <my-header></my-header>
+    <div class="min-h-screen bg-[#F5F7FA]">
+        <section class="relative pt-24 lg:pt-32 pb-24 lg:pb-32 overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=600&fit=crop&auto=format" alt="Team" class="w-full h-full object-cover opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#F5F7FA]/60 to-[#F5F7FA]"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Our Story</div>
+                <h1 class="font-heading font-bold text-5xl lg:text-7xl text-[#1A202C] mb-6 leading-tight">ABOUT<br><span class="text-[#003399]">BENTOKS</span></h1>
+                <p class="text-[#1A202C]/55 text-xl max-w-2xl leading-relaxed">We are a creative branding and printing company dedicated to high-quality designs and professional printing solutions that help businesses and individuals stand out and leave a lasting impression.</p>
+            </div>
+        </section>
+        <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="w-10 h-0.5 bg-[#003399]"></div>
+                    <h2 class="font-heading font-bold text-3xl text-[#1A202C] mt-4 mb-6">OUR STORY</h2>
+                    <div class="space-y-5 text-[#1A202C]/55 text-sm leading-relaxed">
+                        <p>For more than 7 years, Bentoks has helped small business owners, entrepreneurs, and dreamers create custom designs and professional marketing. Our printing services are intended to help you find custom products you need — business cards, promotional marketing and more — to create a look you love.</p>
+                        <p>What started as a small printing operation in Mbabane, Eswatini has grown into a trusted partner for businesses and individuals alike, delivering high-quality prints and custom designs across the region.</p>
+                        <p>We don't just print — we help brands stand out. Your success is our priority, every print, every time.</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="src/img9.png" alt="Studio" class="w-full object-cover h-85">
+                    <div class="absolute -bottom-4 -left-4 bg-[#003399] p-5">
+                        <div class="font-heading font-bold text-4xl text-white leading-none">2017</div>
+                        <div class="text-white/65 text-xs mt-1">Founded in Mbabane</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-[#FFFFFF]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors">
+                        <div class="w-10 h-0.5 bg-[#CC0000]"></div>
+                        <h3 class="font-heading font-semibold text-2xl text-[#1A202C] mt-4 mb-4">OUR VISION</h3>
+                        <p class="text-[#1A202C]/55 text-sm leading-relaxed">Our vision is to become a leading name in creative  printing and branding solutions by delivering high-quality, innovative, and reliable services, we aim to help business grow through impactful visual communication that attracts attention and builds strong brand identity. Through creativity, professionalism and customer satisfaction, we strive to leave a lasting a lasting impression in every project we produce.</p>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors">
+                        <div class="w-10 h-0.5 bg-[#003399]"></div>
+                        <h3 class="font-heading font-semibold text-2xl text-[#1A202C] mt-4 mb-4">OUR MISSION</h3>
+                        <p class="text-[#1A202C]/55 text-sm leading-relaxed">At Bentoks Investments, our mission is to help businesses stand out through professional, high-quality print solutions. We are committed to delivering exceptional results with a focus on customer satisfaction and long-term partnerships.</p>
+                        <div class="mt-6 space-y-2">
+                            <div class="flex items-center gap-3 text-[#1A202C]/55 text-xs">
+                                <span class="material-icons text-[#003399] text-base">check_circle</span>
+                                <span>State-of-the-art printing technology</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#1A202C]/55 text-xs">
+                                <span class="material-icons text-[#003399] text-base">check_circle</span>
+                                <span>Experienced and creative design team</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#1A202C]/55 text-xs">
+                                <span class="material-icons text-[#003399] text-base">check_circle</span>
+                                <span>Fast turnaround times</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[#1A202C]/55 text-xs">
+                                <span class="material-icons text-[#003399] text-base">check_circle</span>
+                                <span>Affordable and transparent pricing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-[#FFFFFF]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-12">
+                        <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">OUR</div>
+                        <h2 class="font-heading font-bold text-4xl text-[#1A202C]">CORE VALUES</h2>
+                    </div>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors">
+                        <div class="w-10 h-0.5 bg-[#003399]"></div>
+                        <h3 class="font-heading font-semibold text-xl text-[#1A202C] mt-4 mb-3">Professionalism</h3>
+                        <p class="text-[#1A202C]/45 text-sm leading-relaxed">We demonstrate excellence in all we do, embracing competence, efficiency, and respect to consistently meet and exceed stakeholder expectations.</p>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors">
+                        <div class="w-10 h-0.5 bg-[#003399]"></div>
+                        <h3 class="font-heading font-semibold text-xl text-[#1A202C] mt-4 mb-3">Integrity</h3>
+                        <p class="text-[#1A202C]/45 text-sm leading-relaxed">We uphold the highest standards of honesty transparency, and accountability, ensuring that every decision and action reflects our commitment to ethical conduct.</p>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors">
+                        <div class="w-10 h-0.5 bg-[#003399]"></div>
+                        <h3 class="font-heading font-semibold text-xl text-[#1A202C] mt-4 mb-3">Team Spirit</h3>
+                        <p class="text-[#1A202C]/45 text-sm leading-relaxed">We foster a collaborative environment where diverse talents work together, support one another, and share a collective responsibility for delivering exceptional results.</p>
+                    </div>
+                    <div class="border border-[#003399]/6 hover:border-[#003399]/20 p-8 transition-colors sm:col-span-3">
+                        <div class="w-10 h-0.5 bg-[#003399]"></div>
+                        <h3 class="font-heading font-semibold text-xl text-[#1A202C] mt-4 mb-3">Customer focus</h3>
+                        <p class="text-[#1A202C]/45 text-sm leading-relaxed">Customer satisfaction is our priority, and we strive to exceed expectations through excellent service. We listen, respond, and provide solution that meet our clients’ needs effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">The People Behind It</div>
+                <h2 class="font-heading font-bold text-4xl text-[#1A202C]">MEET THE TEAM</h2>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="group">
+                    <div class="overflow-hidden mb-4 bg-[#FFFFFF]"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=370&fit=crop&auto=format" alt="Tebogo" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="font-heading font-semibold text-[#1A202C] text-base">Ntokozo Bhembe</div>
+                    <div class="text-[#003399] text-xs tracking-wide uppercase mt-0.5 mb-2">Founder & Creative Director</div>
+                    <p class="text-[#1A202C]/35 text-xs leading-relaxed">Driving the company's growth and setting the creative vision for premium branding, corporate identity, and large-format print campaigns across Eswatini.</p>
+                </div>
+                <div class="group">
+                    <div class="overflow-hidden mb-4 bg-[#FFFFFF]"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=370&fit=crop&auto=format" alt="Mpho" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="font-heading font-semibold text-[#1A202C] text-base">Mpho Sithole</div>
+                    <div class="text-[#003399] text-xs tracking-wide uppercase mt-0.5 mb-2">Head of Design</div>
+                    <p class="text-[#1A202C]/35 text-xs leading-relaxed">Leading the design team to transform complex client briefs into print-ready, high-impact visuals and precise technical layouts for flawless execution.</p>
+                </div>
+                <div class="group">
+                    <div class="overflow-hidden mb-4 bg-[#FFFFFF]"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=370&fit=crop&auto=format" alt="Keabetswe" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="font-heading font-semibold text-[#1A202C] text-base">Keabetswe Moyo</div>
+                    <div class="text-[#003399] text-xs tracking-wide uppercase mt-0.5 mb-2">Production Manager</div>
+                    <p class="text-[#1A202C]/35 text-xs leading-relaxed">Overseeing quality control and operational excellence since 2017.</p>
+                </div>
+                <div class="group">
+                    <div class="overflow-hidden mb-4 bg-[#FFFFFF]"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=370&fit=crop&auto=format" alt="Lorato" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="font-heading font-semibold text-[#1A202C] text-base">Lorato Kgosi</div>
+                    <div class="text-[#003399] text-xs tracking-wide uppercase mt-0.5 mb-2">Client Relations Director</div>
+                    <p class="text-[#1A202C]/35 text-xs leading-relaxed">Nurturing long-term corporate partnerships and guiding clients seamlessly through project timelines, material selection, and large-scale signage rollouts.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-[#003399] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <img src="src/bentoks_logo.png" alt="Bentoks Investments Logo" class="h-20 w-auto" />
+                    </a>
+                    <p class="text-white/35 text-xs leading-relaxed mb-6">High-quality printing that brings your brand to life. We specialize in billboards, banners, t-shirts, and custom prints for businesses and individuals since 2017.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 border border-white/10 hover:border-white/40 hover:bg-white/8 flex items-center justify-center text-white/25 hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">SERVICES</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="services.html#T-Shirt" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">T-Shirt Printing</a></li>
+                        <li><a href="services.html#Banners" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Banners & Posters</a></li>
+                        <li><a href="services.html#Billboards" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Billboards Printing</a></li>
+                        <li><a href="services.html#Custom" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Custom Designs</a></li>
+                        <li><a href="services.html#Vehicle" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Vehicle Branding</a></li>
+                        <li><a href="services.html#Signage" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Signage</a></li>
+                        <li><a href="services.html#Flyers" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Flyers & Advertising Prints</a></li>
+                        <li><a href="services.html#Business" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Business Cards</a></li>
+                        <li><a href="services.html#Brochures" class="text-white/35 hover:text-white text-xs transition-colors text-left leading-relaxed">Brochures</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">COMPANY</h4>
+                    <ul class="space-y-2.5 mb-8">
+                        <li><a href="about.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Portfolio</a></li>
+                        <li><a href="services.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Services</a></li>
+                        <li><a href="contact.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Contact Us</a></li>
+                        <li><a href="quote.html" class="text-white/35 hover:text-white text-xs transition-colors text-left">Request a Quote</a></li>
+                    </ul>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-4">CONTACT</h4>
+                    <div class="space-y-2.5">
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">location_on</span>Mbabane, Sidwashini Ind.site, Zenkosi Complex, Block A, Office A2</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">phone</span>+268 7632 0436 / +268 7932 0436 / 3402 9328</div>
+                        <div class="flex items-center gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0">mail</span>ntokozographics@gmail.com / bentoksinvestments@gmail.com</div>
+                        <div class="flex items-start gap-2 text-white/35 text-xs"><span class="material-icons text-white flex-shrink-0 mt-0.5">mail</span>P.O. Box 8740, Mbabane H100, Eswatini</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-5">NEWSLETTER</h4>
+                    <p class="text-white/35 text-xs leading-relaxed mb-4">Latest branding trends delivered to your inbox.</p>
+                    <form onsubmit="submitNewsletterSubscribe(event, this)" class="space-y-2">
+                        <input type="email" required placeholder="Your email" class="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 text-xs px-3 py-2.5 outline-none focus:border-white/50 transition-colors" />
+                        <button type="submit" class="w-full bg-[#CC0000] hover:bg-[#DD0000] text-white font-heading font-semibold text-xs tracking-[0.15em] uppercase py-2.5 transition-colors flex items-center justify-center gap-1.5">
+                            <span class="material-icons">mail</span> Subscribe
+                        </button>
+                    </form>
+                    <div id="newsletter-success" class="flex items-center gap-2 text-white text-xs hidden"><span class="material-icons">check_circle</span> Subscribed — thank you!</div>
+                    <div class="mt-8">
+                        <h4 class="font-heading text-white font-semibold text-sm tracking-[0.1em] mb-3">HOURS</h4>
+                        <div class="space-y-1.5 text-xs">
+                            <div class="flex justify-between text-white/35"><span>Mon – Fri</span><span>08:00 – 17:00</span></div>
+                            <div class="flex justify-between text-white/35"><span>Saturday</span><span>08:00 – 13:00</span></div>
+                            <div class="flex justify-between text-white/20"><span>Sunday</span><span>Closed</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-white/30 text-xs">© 2026 Bentoks Investments. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/26876320436?text=Hello%20Bentoks%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1EBE5D] shadow-xl shadow-[#25D366]/30 flex items-center justify-center transition-all hover:scale-110 group" style="border-radius:50%">
+        <span class="material-icons text-white text-2xl">chat</span>
+        <div class="absolute right-full mr-3 bg-[#003399] text-white text-xs px-3 py-1.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 shadow-xl pointer-events-none">Chat on WhatsApp</div>
+    </a>
+
+    <script>
+        
+        
+    </script>
+</body>
+</html>
