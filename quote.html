@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request a Quote - Bentoks Investments</title>
+    <link rel="stylesheet" href="loader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght=700&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="utilities.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="config.js"></script>
+    <script src="loader.js" defer></script>
     <script src="main.js" defer></script>
     <script src="api.js" defer></script>
     <script>
@@ -57,12 +59,31 @@
     </style>
 </head>
 <body>
+    <!-- Site Loader: printer's registration marks drift into alignment while the page loads -->
+    <div id="site-loader" role="status" aria-live="polite" aria-label="Loading Bentoks Investments">
+        <div class="site-loader-inner">
+            <div class="reg-marks" aria-hidden="true">
+                <span class="reg-ring reg-ring--ink"></span>
+                <span class="reg-ring reg-ring--navy"></span>
+                <span class="reg-ring reg-ring--red"></span>
+            </div>
+            <p class="site-loader-word">Aligning your brand<em>.</em></p>
+        </div>
+    </div>
+
     <!-- Navbar -->
         <my-header></my-header><div class="pt-16 min-h-screen bg-[#F5F7FA]">
-        <section class="py-24 border-b border-[#003399]/5 max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Get Pricing</div>
-            <h1 class="font-heading font-bold text-5xl lg:text-6xl text-[#1A202C] leading-tight">REQUEST A <span class="text-[#003399]">QUOTE</span></h1>
-            <p class="text-[#1A202C]/45 text-base mt-4 max-w-md leading-relaxed">Fill in the form and we will respond with a detailed proposal within 24 hours.</p>
+        <section class="relative overflow-hidden py-24 border-b border-[#003399]/5">
+            <div class="absolute inset-0">
+                <img src="src/flyer.jpg" alt="Printed flyer, an example of a finished quote request" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-r from-[#F5F7FA] via-[#F5F7FA]/85 to-[#F5F7FA]/55"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#F5F7FA] via-transparent to-transparent"></div>
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Get Pricing</div>
+                <h1 class="font-heading font-bold text-5xl lg:text-6xl text-[#1A202C] leading-tight">REQUEST A <span class="text-[#003399]">QUOTE</span></h1>
+                <p class="text-[#1A202C]/45 text-base mt-4 max-w-md leading-relaxed">Fill in the form and we will respond with a detailed proposal within 24 hours.</p>
+            </div>
         </section>
 
         <section class="py-16 max-w-2xl mx-auto px-4 sm:px-6">

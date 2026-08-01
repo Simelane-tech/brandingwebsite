@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bentoks Investments - Premium Branding Solutions</title>
     <meta name="description" content="High-quality printing that brings your brand to life. We specialise in Billboards, Banners, T-shirts, and custom prints for businesses and individuals." />
+    <link rel="stylesheet" href="loader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet" />
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="utilities.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="config.js"></script>
+    <script src="loader.js" defer></script>
     <script src="main.js" defer></script>
     <script src="api.js" defer></script>
     <script>
@@ -351,6 +353,18 @@
     </style>
 </head>
 <body>
+    <!-- Site Loader: printer's registration marks drift into alignment while the page loads -->
+    <div id="site-loader" role="status" aria-live="polite" aria-label="Loading Bentoks Investments">
+        <div class="site-loader-inner">
+            <div class="reg-marks" aria-hidden="true">
+                <span class="reg-ring reg-ring--ink"></span>
+                <span class="reg-ring reg-ring--navy"></span>
+                <span class="reg-ring reg-ring--red"></span>
+            </div>
+            <p class="site-loader-word">Aligning your brand<em>.</em></p>
+        </div>
+    </div>
+
     <!-- Navbar -->
         <my-header></my-header><!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden bg-[#F5F7FA] pt-24">

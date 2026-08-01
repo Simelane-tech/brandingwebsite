@@ -1,0 +1,9 @@
+{
+  "name": "bentoks-investments-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bentoks Investments website + Vercel serverless API (contact/quote/newsletter forms). For traditional Node hosting instead of Vercel, deploy the /server folder (Express) separately.",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

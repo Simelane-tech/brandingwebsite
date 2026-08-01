@@ -1,0 +1,88 @@
+/* ============================================
+   BENTOKS INVESTMENTS — SITE LOADER
+   ============================================
+   Signature idea: printers' registration marks — the crosshair rings a
+   print shop uses to align color plates — start slightly offset and
+   drift into perfect concentric alignment as the page finishes loading.
+   It's the one motif that's actually specific to a printing & branding
+   business, and it literalizes "everything aligned" rather than using a
+   generic spinner.
+
+   This file is intentionally tiny and linked first in <head> so it's
+   available before anything else on the page, avoiding any flash of
+   unstyled content while fonts/Tailwind/images are still loading.
+*/
+
+#site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F7FA;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+#site-loader[data-hidden="true"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* -- Registration marks -- */
+.reg-marks {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+.reg-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+.reg-ring::before,
+.reg-ring::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+}
+.reg-ring::before { left: 50%; top: -6px; bottom: -6px; width: 1.5px; transform: translateX(-50%); }
+.reg-ring::after  { top: 50%; left: -6px; right: -6px; height: 1.5px; transform: translateY(-50%); }
+
+.reg-ring--ink  { color: #1A202C; opacity: .45; animation: regDriftC 1.7s cubic-bezier(.65,0,.35,1) infinite; }
+.reg-ring--navy { color: #003399; animation: regDriftA 1.7s cubic-bezier(.65,0,.35,1) infinite; }
+.reg-ring--red  { color: #CC0000; animation: regDriftB 1.7s cubic-bezier(.65,0,.35,1) infinite; }
+
+@keyframes regDriftA { 0%, 100% { transform: translate(-7px, -4px); } 50% { transform: translate(0, 0); } }
+@keyframes regDriftB { 0%, 100% { transform: translate(7px, -3px); }  50% { transform: translate(0, 0); } }
+@keyframes regDriftC { 0%, 100% { transform: translate(1px, 7px); }   50% { transform: translate(0, 0); } }
+
+.site-loader-word {
+  margin: 0;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .28em;
+  color: #1A202C;
+  text-transform: uppercase;
+  text-align: center;
+}
+.site-loader-word em {
+  color: #CC0000;
+  font-style: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reg-ring--ink, .reg-ring--navy, .reg-ring--red {
+    animation: none;
+    transform: translate(0, 0);
+  }
+}

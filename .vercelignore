@@ -1,0 +1,16 @@
+# The /server folder is a separate Express app for traditional Node hosting
+# (Render/Railway/a VPS) — it is NOT used on Vercel (Vercel uses /api instead)
+# and must never be uploaded here: without this, its source code — including
+# server/.env if you ever created one locally — would be deployed as plain,
+# publicly downloadable static files on your Vercel domain.
+server/
+
+# Never deploy git internals or environment files
+.git
+.env
+*.env
+!.env.example
+
+# Local-only files
+node_modules/
+.DS_Store
