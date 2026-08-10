@@ -2,8 +2,11 @@
   "name": "bentoks-investments-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Bentoks Investments website + Vercel serverless API (contact/quote/newsletter forms). For traditional Node hosting instead of Vercel, deploy the /server folder (Express) separately.",
+  "description": "Bentoks Investments website + Netlify Functions API (contact/quote/newsletter forms). For traditional Node hosting instead of Netlify Functions, deploy the /server folder (Express) separately.",
   "dependencies": {
     "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.8.2"
   }
 }
