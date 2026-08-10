@@ -1,18 +1,17 @@
-const {
+import {
   ADMIN_EMAIL, FROM_EMAIL,
-  applyCors, isRateLimited, getBody, sendMailSafe,
+  corsHeaders, jsonResponse, isRateLimited, getBody, sendMailSafe,
   sanitizeField, isValidEmail,
   quoteAdminHtml, quoteAutoReplyHtml
-} = require('./_lib/mail-core');
+} from './_lib/mail-core.mjs';
 
-module.exports = async (req, res) => {
-  applyCors(req, res);
-  if (req.method === 'OPTIONS') return res.status(204).end();
-  if (req.method !== 'POST') return res.status(405).json({ success: false, message: 'Method not allowed.' });
-  if (isRateLimited(req)) return res.status(429).json({ success: false, message: 'Too many requests. Please try again later.' });
+export default async (req, context) => {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders(req) });
+  if (req.method !== 'POST') return jsonResponse(req, 405, { success: false, message: 'Method not allowed.' });
+  if (isRateLimited(req, context)) return jsonResponse(req, 429, { success: false, message: 'Too many requests. Please try again later.' });
 
   try {
-    const body = getBody(req);
+    const body = await getBody(req);
     let name = sanitizeField(body.name, 150);
     let company = sanitizeField(body.company, 150);
     let email = sanitizeField(body.email, 254);
@@ -24,10 +23,10 @@ module.exports = async (req, res) => {
     let details = sanitizeField(body.details, 5000);
 
     if (!name || !email || !phone || !service || !details) {
-      return res.status(400).json({ success: false, message: 'Please fill in Name, Email, Phone, Service, and Description.' });
+      return jsonResponse(req, 400, { success: false, message: 'Please fill in Name, Email, Phone, Service, and Description.' });
     }
     if (!isValidEmail(email)) {
-      return res.status(400).json({ success: false, message: 'Please provide a valid email address.' });
+      return jsonResponse(req, 400, { success: false, message: 'Please provide a valid email address.' });
     }
 
     // Single reference number generated ONCE here and reused for both emails
@@ -49,11 +48,15 @@ module.exports = async (req, res) => {
     ]);
 
     if (!toAdmin || !toClient) {
-      return res.status(500).json({ success: false, message: 'Email failed to send. Please try again or call +268 7632 0436.' });
+      return jsonResponse(req, 500, { success: false, message: 'Email failed to send. Please try again or call +268 7632 0436.' });
     }
-    res.status(200).json({ success: true, message: 'Quote request submitted! We will reply within 24 hours.', reference: ref });
+    return jsonResponse(req, 200, { success: true, message: 'Quote request submitted! We will reply within 24 hours.', reference: ref });
   } catch (err) {
     console.log('FATAL /api/quote:', err && err.message);
-    res.status(500).json({ success: false, message: 'Server error. Please try again or call +268 7632 0436.' });
+    return jsonResponse(req, 500, { success: false, message: 'Server error. Please try again or call +268 7632 0436.' });
   }
+};
+
+export const config = {
+  path: '/api/quote'
 };
