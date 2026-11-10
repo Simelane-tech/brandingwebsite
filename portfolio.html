@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Bentoks Investments</title>
+    <title>Printing & Branding Portfolio | Bentoks Investments</title>
+    <meta name="description" content="View selected printing, branding and promotional projects by Bentoks Investments, including branded apparel, signage, banners and large-format work in Eswatini.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bentoks Investments">
+
+    <meta property="og:title"
+    content="Bentoks Investments | Printing & Branding Solutions">
+
+    <meta property="og:description"
+    content="Professional printing, branding, banners, billboards and promotional solutions in Eswatini.">
+
+    <meta property="og:image" content="src/printing.jpg">
+
+    <!-- Twitter / X SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+    content="Bentoks Investments | Printing & Branding Solutions">
+
+    <meta name="twitter:description"
+    content="Professional printing and branding solutions in Eswatini.">
+
+    <meta name="twitter:image" content="src/printing.jpg">
+    
     <link rel="stylesheet" href="loader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +68,7 @@
         * { scroll-behavior: smooth; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; background-color: #F5F7FA; color: #1A202C; line-height: 1.6; }
         h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: rgba(0, 51, 153, 0.05); }
         ::-webkit-scrollbar-thumb { background: rgba(0, 51, 153, 0.3); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: rgba(0, 51, 153, 0.6); }
@@ -122,10 +147,10 @@
     </div>
 
     <!-- Navbar -->
-        <my-header></my-header><div class="pt-16 min-h-screen bg-[#F5F7FA]">
+        <my-header></my-header><main class="w-full min-h-screen bg-[#F5F7FA]">
         <section class="relative overflow-hidden py-24 border-b border-[#003399]/5">
             <div class="absolute inset-0">
-                <img src="src/postcard.jpg" alt="Close-up of finished Bentoks print work" class="w-full h-full object-cover" />
+                <img src="src/bentoks.png" alt="Close-up of finished Bentoks print work" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-r from-[#F5F7FA] via-[#F5F7FA]/85 to-[#F5F7FA]/55"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#F5F7FA] via-transparent to-transparent"></div>
             </div>
@@ -169,29 +194,53 @@
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                <!-- Vehicle Branding -->
-                <div class="portfolio-item" data-category="vehicle">
-                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/vehicle branding.jpg" alt="Vehicle Branding" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
-                        <div class="p-5 border-t border-[#003399]/5">
-                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Vehicle Branding · 2024</div>
-                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Delivery Fleet Wrap</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Large Format Printing -->
-                <div class="portfolio-item" data-category="large-format">
-                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/billboard printing.jpg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
-                        <div class="p-5 border-t border-[#003399]/5">
-                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2023</div>
-                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Main Road Billboard Installation</h3>
-                        </div>
-                    </div>
-                </div>
-
+               
                 <!-- Commercial Print -->
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/usbs.jpeg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Commercial Print · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Branded USB Sticks</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/photoframes.jpeg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Commercial Print · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Photo Frames</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/nameplates-3.jpeg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Commercial Print · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Nameplates</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/nameplates-2.jpeg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Commercial Print · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Nameplates</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/cansor-pamplets.jpeg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Commercial Print · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">International Breast Canser Awareness</h3>
+                        </div>
+                    </div>
+                </div> 
                 <div class="portfolio-item" data-category="commercial">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/postcard.jpg" alt="Commercial Print" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -322,29 +371,79 @@
                     </div>
                 </div>
 
-                <!-- Clothing Printing -->
-                <div class="portfolio-item" data-category="clothing">
-                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=450&fit=crop&auto=format" alt="Clothing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
-                        <div class="p-5 border-t border-[#003399]/5">
-                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Clothing Printing · 2024</div>
-                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Corporate Event Apparel</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Signage -->
-                <div class="portfolio-item" data-category="signage">
-                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/signage.jpg" alt="Signage" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
-                        <div class="p-5 border-t border-[#003399]/5">
-                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Signage · 2024</div>
-                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Retail Store Front Signage</h3>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Promotional Products -->
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/stationary-pens.jpeg" alt="Promotional stationary" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Branded Pens</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/diaries.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Branded Notebooks</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/steel bottles.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Stainless steel</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/premium-cans.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Stainless steel</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/premium-cans-2.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Stainless steel</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/dishwasher-soap.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Sparkly Boss</h3>
+                        </div>
+                    </div>
+                </div>  
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/cane-branding.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Branded cooler bag</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="promotional">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/Bottle.jpeg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Promotional Products · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Branded water bottles</h3>
+                        </div>
+                    </div>
+                </div> 
                 <div class="portfolio-item" data-category="promotional">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/promotional.jpg" alt="Promotional" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -415,7 +514,27 @@
                     </div>
                 </div>
 
-                <!-- Additional Vehicle Branding -->
+                 <!-- Vehicle Branding -->
+                <div class="portfolio-item" data-category="vehicle">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/carbranding-destiny.jpeg" alt="Vehicle Branding" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Vehicle Branding · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Corporate Fleet Wrap</h3>
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="portfolio-item" data-category="vehicle">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/vehicle branding.jpg" alt="Vehicle Branding" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Vehicle Branding · 2024</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Corporate Fleet Wrap</h3>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="portfolio-item" data-category="vehicle">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=450&fit=crop&auto=format" alt="Vehicle Wrap" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -448,15 +567,90 @@
 
                 <div class="portfolio-item" data-category="vehicle">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
-                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/car.png" alt="Car Wrap" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/tractor-branding-1.jpeg" alt="Car Wrap" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
                         <div class="p-5 border-t border-[#003399]/5">
-                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Bus Branding · 2026</div>
-                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Bus Fleet wrap</h3>
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Industrial · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Heavy Machinery & Fleet Branding</h3>
                         </div>
                     </div>
                 </div>
 
-                <!-- Additional Large Format -->
+                <div class="portfolio-item" data-category="vehicle">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/tractor-branding-2.jpeg" alt="Car Wrap" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Industrial · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Heavy Machinery & Fleet Branding</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="vehicle">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/tractor-branding.jpeg" alt="Car Wrap" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Industrial · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Heavy Machinery & Fleet Branding</h3>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Large Format Printing -->
+                <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/carwash-banner.jpeg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Banner</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/pullup-banners-2.jpeg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Pullup Banner</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/pullup-banner.jpeg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Pullup Banner</h3>
+                        </div>
+                    </div>
+                </div>
+                 <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/banner.jpeg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Banner</h3>
+                        </div>
+                    </div>
+                </div>  
+                <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/billboard-printing.jpeg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Packaging label production</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="large-format">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/billboard printing.jpg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Large Format · 2023</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Main Road Billboard Installation</h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-item" data-category="large-format">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/printing.jpg" alt="Large Format" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -597,7 +791,26 @@
                     </div>
                 </div>
 
-                <!-- Additional Clothing -->
+                <!-- Clothing Printing -->
+                <div class="portfolio-item" data-category="clothing">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/tshirt-pressing.jpeg" alt="Clothing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Clothing Printing · 2024</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Sports Jersey</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="clothing">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=450&fit=crop&auto=format" alt="Clothing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Clothing Printing · 2024</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Corporate Event Apparel</h3>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="portfolio-item" data-category="clothing">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/tshirt.jpg" alt="Clothing" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -618,7 +831,44 @@
                     </div>
                 </div>
 
-                <!-- Additional Signage -->
+                <!-- Signage -->
+                <div class="portfolio-item" data-category="signage">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/mbabane-plaza.jpeg" alt="Signage" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Signage · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Mbabane, Eswatini</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="signage">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/fnb-signage.jpeg" alt="FNB Eswatini" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Signage · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">First National Bank</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="signage">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/New/woodex-board.jpeg" alt="Signage" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Signage · 2026</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">WoodX Signage</h3>
+                        </div>
+                    </div>
+                </div> 
+                <div class="portfolio-item" data-category="signage">
+                    <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
+                        <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/signage.jpg" alt="Signage" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
+                        <div class="p-5 border-t border-[#003399]/5">
+                            <div class="text-[#003399] text-xs tracking-[0.15em] uppercase mb-1">Signage · 2024</div>
+                            <h3 class="font-heading text-[#1A202C] font-semibold text-lg">Retail Store Front Signage</h3>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="portfolio-item" data-category="signage">
                     <div class="group overflow-hidden bg-[#FFFFFF] border border-[#003399]/5 hover:border-[#003399]/20 transition-all duration-300">
                         <div class="aspect-[4/3] overflow-hidden bg-[#E2E8F0]"><img src="src/letshego signage.jpg" alt="Signage" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"></div>
@@ -661,7 +911,7 @@
 
             </div>
         </section>
-    </div>
+    </main>
 
     <footer class="bg-[#003399] border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20">

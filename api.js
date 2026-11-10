@@ -105,12 +105,10 @@
     } catch (netErr) {
       // Network-level failure (CORS / server not running / no internet)
       const isOnline = typeof navigator !== 'undefined' && navigator.onLine;
-      const help1 = !isOnline ? 'You are OFFLINE. Reconnect to the internet first.' :
-        'The email server is NOT RUNNING on your computer.';
-      const help2 = !isOnline ? '' :
-        `\n\n👉 Fix this:\n1. Double-click the file START_EMAIL_SERVER.bat in your website folder\n2. Wait for the black window to show "SERVER RUNNING"\n3. Then refresh this page and try again.`;
-      const help3 = `\n\n📞 Still stuck? Call us directly at +268 7632 0436`;
-      showToast(`${help1}${help2}${help3}`, 'error');
+      const help = !isOnline
+        ? 'You are offline. Reconnect to the internet and try again.'
+        : 'The website could not reach its email API. Please try again shortly or contact the website administrator.';
+      showToast(`${help}\n\nIf the problem continues, call +268 7632 0436.`, 'error');
       return { ok: false };
     }
     try { result = await response.json(); }

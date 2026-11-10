@@ -135,19 +135,17 @@ function buildTransporter(mode) {
   lastTransportMode = isTls587 ? 'STARTTLS (587)' : 'SSL (465)';
   return nodemailer.createTransport({
     host: SMTP_HOST,
-    pool: true,
-    maxConnections: 2,
-    maxMessages: 50,
-    rateDelta: 1000,
-    rateLimit: 10,
+    // Serverless instances are short-lived; avoid reusing stale pooled sockets.
+    pool: false,
     port: isTls587 ? SMTP_PORT_STARTTLS : SMTP_PORT_SECURE,
     secure: !isTls587,
     requireTLS: isTls587,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
     authMethod: 'LOGIN',
-    connectionTimeout: 60 * 1000,
-    greetingTimeout: 30 * 1000,
-    socketTimeout: 60 * 1000,
+    // Keep each SMTP attempt comfortably below the Vercel function limit.
+    connectionTimeout: 8000,
+    greetingTimeout: 5000,
+    socketTimeout: 10000,
     logger: false,
     debug: false,
     tls: { minVersion: 'TLSv1.2' } // cert validation stays ON; no weak-cipher downgrade
@@ -165,26 +163,30 @@ function swapTransporter() {
 }
 
 async function sendMailSafe(opts, label) {
-  const attempts = 2; // kept low: serverless functions have a max execution time (default 10s on Hobby plans)
-  for (let i = 1; i <= attempts; i++) {
+  // Try both Gmail submission ports. Do not restrict fallback to socket-close
+  // errors: ETIMEDOUT, ECONNECTION and ECONNRESET are common on hosted runtimes.
+  const modes = ['ssl465', 'tls587'];
+  let lastError = null;
+  for (let i = 0; i < modes.length; i++) {
     try {
-      const t = getTransporter();
-      const info = await t.sendMail(opts);
-      console.log(`[${label}] OK -> ${opts.to}${info.messageId ? ' id ' + info.messageId.slice(0, 25) : ''}`);
-      return true;
+      // Each parallel recipient send owns its transporter; never close another
+      // request's in-flight connection through shared module state.
+      const currentTransporter = buildTransporter(modes[i]);
+      try {
+        const info = await currentTransporter.sendMail(opts);
+        console.log(`[${label}] OK -> ${opts.to}${info.messageId ? ' id ' + info.messageId.slice(0, 25) : ''}`);
+        return true;
+      } finally {
+        try { currentTransporter.close(); } catch (_) {}
+      }
     } catch (err) {
-      const isSocketClose = err.message && (
-        err.message.indexOf('Unexpected socket close') >= 0 ||
-        err.message.indexOf('socket hang up') >= 0 ||
-        err.message.indexOf('read ECONNRESET') >= 0
-      );
-      const isAuth = err.code === 'EAUTH' || (err.message && err.message.indexOf('Invalid login') >= 0);
-      console.log(`[${label}] attempt ${i}/${attempts} failed (${err.code || 'ERR'}): ${(err.message || '').split('\n')[0].slice(0, 140)}`);
-      if (isAuth) return false;
-      if (isSocketClose) swapTransporter();
-      if (i < attempts) await new Promise(r => setTimeout(r, 500));
+      lastError = err;
+      const message = (err && err.message ? err.message : 'Unknown SMTP error').split('\n')[0].slice(0, 160);
+      console.error(`[${label}] ${modes[i]} failed (${err.code || 'ERR'}): ${message}`);
+      if (err.code === 'EAUTH' || /Invalid login|Username and Password not accepted/i.test(message)) break;
     }
   }
+  console.error(`[${label}] delivery failed after SMTP fallback: ${lastError && (lastError.code || lastError.message)}`);
   return false;
 }
 
@@ -274,6 +276,7 @@ function newsletterAutoReplyHtml(siteUrl) {
 
 module.exports = {
   ADMIN_EMAIL, FROM_EMAIL,
+  getEmailStatus: () => ({ configured: !!(SMTP_USER && SMTP_USER.includes('@') && SMTP_PASS && ADMIN_EMAIL && ADMIN_EMAIL.includes('@')), smtpUserPresent: !!SMTP_USER, smtpPasswordPresent: !!SMTP_PASS, adminEmailPresent: !!ADMIN_EMAIL }),
   getSiteUrl, escapeHtml, sanitizeField, isValidEmail,
   applyCors, isRateLimited, getBody, sendMailSafe,
   contactAdminHtml, contactAutoReplyHtml,

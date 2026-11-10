@@ -3,7 +3,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bentoks Investments - Premium Branding Solutions</title>
+    <title>Printing & Branding Solutions in Eswatini | Bentoks</title>
+    <meta name="description" content="Bentoks Investments delivers professional printing, branding, banners, billboards, apparel printing and promotional solutions for businesses in Eswatini.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bentoks Investments">
+
+    <meta property="og:title"
+    content="Bentoks Investments | Printing & Branding Solutions">
+
+    <meta property="og:description"
+    content="Professional printing, branding, banners, billboards and promotional solutions in Eswatini.">
+
+    <meta property="og:image" content="src/printing.jpg">
+
+    <!-- Twitter / X SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+    content="Bentoks Investments | Printing & Branding Solutions">
+
+    <meta name="twitter:description"
+    content="Professional printing and branding solutions in Eswatini.">
+
+    <meta name="twitter:image" content="src/printing.jpg">
+    
     <meta name="description" content="High-quality printing that brings your brand to life. We specialise in Billboards, Banners, T-shirts, and custom prints for businesses and individuals." />
     <link rel="stylesheet" href="loader.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,6 +66,33 @@
             },
         };
     </script>
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Bentoks Investments",
+        "email": [
+            "ntokozographics@gmail.com",
+            "bentoksinvestments@gmail.com"
+        ],
+        "telephone": [
+            "+268 7632 0436",
+            "+268 7932 0436",
+            "+268 3402 9328"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "postOfficeBoxNumber": "8740",
+            "addressLocality": "Mbabane",
+            "addressCountry": "SZ"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Eswatini"
+        },
+        "description": "Professional printing, branding, promotional products and large-format printing solutions in Eswatini."
+        }
+    </script>
     <style>
         * {
             scroll-behavior: smooth;
@@ -58,10 +110,23 @@
             line-height: 1.1;
             letter-spacing: 0.01em;
         }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0, 51, 153, 0.05); }
-        ::-webkit-scrollbar-thumb { background: rgba(0, 51, 153, 0.3); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 51, 153, 0.6); }
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 51, 153, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 51, 153, 0.6);
+        }
+
         .material-icons, .material-icons-outlined, .material-symbols-outlined {
             vertical-align: middle;
             font-size: 1.25rem;
@@ -90,33 +155,6 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
-
-        .hero-shape {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero-shape-1 {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(204, 0, 0, 0.08) 0%, transparent 70%);
-            top: -50px;
-            right: -50px;
-        }
-        .hero-shape-2 {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(0, 51, 153, 0.06) 0%, transparent 70%);
-            bottom: 100px;
-            left: 10%;
-        }
-        .hero-shape-3 {
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(204, 0, 0, 0.05) 0%, transparent 70%);
-            top: 30%;
-            right: 20%;
-        }
 
         /* Trusted By Logo Slider */
         .logo-slider-track {
@@ -350,6 +388,160 @@
             .hero-shape-2 { width: 100px; height: 100px; }
             .testimonial-nav { width: 36px; height: 36px; }
         }
+        /*our services styling*/
+        /* ==========================================
+        BENTOKS PREMIUM PHOTOGRAPHIC SERVICE CARDS
+        ========================================== */
+
+        .bentoks-service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .bentoks-service-card {
+            position: relative;
+            display: flex;
+            min-height: 390px;
+            overflow: hidden;
+            isolation: isolate;
+            background: #14213d;
+            border: 1px solid rgba(0, 51, 153, 0.12);
+            border-radius: 3px;
+            text-decoration: none;
+            color: #fff;
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+        }
+
+        .bentoks-service-image {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.65s cubic-bezier(.2, .7, .2, 1);
+        }
+
+        /* Dark gradient overlay */
+
+        .bentoks-service-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                180deg,
+                rgba(8, 17, 38, 0.06) 5%,
+                rgba(8, 17, 38, 0.28) 38%,
+                rgba(8, 17, 38, 0.94) 100%
+            );
+            transition: background 0.35s ease;
+        }
+
+        /* Card content */
+
+        .bentoks-service-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            min-height: inherit;
+            padding: 25px 22px 24px;
+        }
+
+        .bentoks-service-kicker {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.19em;
+            margin-bottom: 10px;
+        }
+
+        .bentoks-service-title {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.35rem, 2vw, 1.75rem);
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .bentoks-service-description {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.83rem;
+            line-height: 1.55;
+            max-width: 30ch;
+        }
+
+        .bentoks-service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 19px;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .bentoks-service-link .material-icons {
+            font-size: 17px;
+            transition: transform 0.25s ease;
+        }
+
+        /* Hover animations */
+
+        .bentoks-service-card:hover .bentoks-service-image,
+        .bentoks-service-card:focus-visible .bentoks-service-image {
+            transform: scale(1.07);
+        }
+
+        .bentoks-service-card:hover .bentoks-service-link .material-icons,
+        .bentoks-service-card:focus-visible .bentoks-service-link .material-icons {
+            transform: translateX(5px);
+        }
+
+        .bentoks-service-card:focus-visible {
+            outline: 3px solid #CC0000;
+            outline-offset: 4px;
+        }
+
+        /* Tablet */
+
+        @media (max-width: 1023px) {
+            .bentoks-service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 639px) {
+            .bentoks-service-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .bentoks-service-card {
+                min-height: 330px;
+            }
+
+            .bentoks-service-content {
+                padding: 23px 21px;
+            }
+        }
+
+        /* Accessibility */
+
+        @media (prefers-reduced-motion: reduce) {
+            .bentoks-service-image,
+            .bentoks-service-link .material-icons {
+                transition: none;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -372,9 +564,6 @@
             <img src="src/printing.jpg" alt="Creative branding studio" class="w-full h-full object-cover opacity-100" />
             <div class="absolute inset-0 bg-gradient-to-r from-[#F5F7FA] via-[#F5F7FA]/70 to-[#F5F7FA]/50"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#F5F7FA] via-transparent to-transparent"></div>
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
-            <div class="hero-shape hero-shape-3"></div>
             <div class="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#003399]/10 to-transparent"></div>
             <div class="absolute top-0 right-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#1A202C]/4 to-transparent"></div>
         </div>
@@ -415,80 +604,122 @@
             <div class="slider-container bg-[#FFFFFF] border border-[#003399]/6 shadow-lg shadow-[#003399]/5">
                 <div class="slider-track" id="sliderTrack">
                     <div class="slider-slide">
-                        <img src="src/wall signage.jpg" alt="Custom LED Neon & 3D Letters" />
+                        <img src="src/New/steel bottles.jpeg" alt="Custom LED Neon & 3D Letters" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Promotional Merchandise & Drinkware</h3>
+                            <p>Custom Branded Stainless Steel Flasks · 2026</p>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="src/wall signage.jpg" alt="Custom LED Neon & 3D Letters" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Custom LED Neon &amp; 3D Letters</h3>
                             <p>Office Signage · 2026</p>
                         </div>
                     </div>
+                     <div class="slider-slide">
+                        <img src="src/New/premium-cans-2.jpeg" alt="stainless cane" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Promotional Merchandise & Drinkware</h3>
+                            <p>Custom Branded Vacuum Flasks · 2026</p>
+                        </div>
+                    </div>
                     <div class="slider-slide">
-                        <img src="src/img6.jpeg" alt="Promotional" />
+                        <img src="src/New/premium-cans.jpeg" alt="stainless cane" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Promotional Merchandise & Drinkware</h3>
+                            <p>Custom Branded Vacuum Flasks · 2026</p>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="src/img6.jpeg" alt="Promotional" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Promotional water bottle</h3>
                             <p>Promotional Merchandise · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/business card.jpg" alt="Custom Business Cards" />
+                        <img src="src/business card.jpg" alt="Custom Business Cards" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Custom Business Cards</h3>
                             <p>Corporate Stationery · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/img8.jpeg" alt="lanyard" />
+                        <img src="src/img8.jpeg" alt="lanyard" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Lanyard</h3>
                             <p>Promotional Merchandise · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/promotional.jpg" alt="Branded Drinkware & Travel Bags" />
+                        <img src="src/promotional.jpg" alt="Branded Drinkware & Travel Bags" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Branded Drinkware &amp; Travel Bags</h3>
                             <p>Promotional Merchandise · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&h=500&fit=crop&auto=format" alt="Vehicle Branding" />
+                        <img src="src/New/carbranding-destiny.jpeg" alt="Vehicle Branding" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Vehicle Branding &amp; Wrap</h3>
                             <p>Fleet Branding · 2025</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/bottles (2).jpg" alt="Promotional Water Bottle" />
+                        <img src="src/bottles (2).jpg" alt="Promotional Water Bottle" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Promotional water bottle</h3>
                             <p>Promotional Merchandise · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/frosting -onsite (4).jpg" alt="windows frosting" />
+                        <img src="src/New/tractor-branding-2.jpeg" alt="bentoks branded tractor" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Heavy Machinery & Fleet Branding</h3>
+                            <p>Industrial Equipment Decals & Graphics · 2026</p>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="src/frosting -onsite (4).jpg" alt="windows frosting" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Windows Frosting</h3>
                             <p>Frosting Solutions · 2025</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/buss branding.jpg" alt="Bus Branding" />
+                        <img src="src/New/frosting.jpeg" alt="windows frosting" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Architectural Branding & Signage</h3>
+                            <p>Glass Door Frosting & Decals · 2026</p>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="src/buss branding.jpg" alt="Bus Branding" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Bus Branding</h3>
                             <p>Fleet Branding · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/letshego reserved parking.jpg" alt="reserved parking" />
+                        <img src="src/letshego reserved parking.jpg" alt="reserved parking" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Reserved Parking</h3>
                             <p>Parking Solutions · 2026</p>
                         </div>
                     </div>
                     <div class="slider-slide">
-                        <img src="src/mounting.jpg" alt="mounted signage" />
+                        <img src="src/mounting.jpg" alt="mounted signage" loading="lazy" decoding="async"/>
                         <div class="slider-overlay">
                             <h3>Mounted Signage</h3>
                             <p>Signage Solutions · 2026</p>
+                        </div>
+                    </div>
+                    <div class="slider-slide">
+                        <img src="src/New/billboard-printing.jpeg" alt="billboard-printing" loading="lazy" decoding="async"/>
+                        <div class="slider-overlay">
+                            <h3>Large-Format Printing & Production</h3>
+                            <p>Packaging Label Production · 2026</p>
                         </div>
                     </div>
                 </div>
@@ -513,8 +744,6 @@
 
     <!-- Services Section -->
     <section class="py-24 lg:py-32 bg-[#FFFFFF] relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#003399]/5 to-transparent rounded-full"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#CC0000]/5 to-transparent rounded-full"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
@@ -524,38 +753,46 @@
                 </div>
                 <p class="text-[#1A202C]/45 text-sm leading-relaxed lg:max-w-sm">From concept to creation — end-to-end branding solutions that elevate your business above the competition.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                <a href="services.html" class="group bg-[#FFFFFF] border border-[#003399]/6 hover:border-[#003399]/25 p-8 cursor-pointer transition-all duration-300 hover:bg-[#F5F7FA] hover:shadow-xl hover:shadow-[#003399]/5">
-                    <div class="w-11 h-11 border border-[#003399]/10 group-hover:border-[#003399]/40 flex items-center justify-center mb-6 transition-colors">
-                        <span class="material-icons text-[#1A202C]/30 group-hover:text-[#CC0000]">style</span>
-                    </div>
-                    <h3 class="font-heading font-semibold text-lg text-[#1A202C] mb-3 group-hover:text-[#003399] transition-colors">T-Shirt Printing</h3>
-                    <p class="text-[#1A202C]/35 text-sm leading-relaxed group-hover:text-[#1A202C]/55">Custom t-shirt designs for businesses, events and personal use.</p>
-                    <div class="mt-5 flex items-center gap-1.5 text-[#003399] text-xs tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity font-medium">Learn more <span class="material-icons icon-sm">arrow_forward</span></div>
+            <div class="bentoks-service-grid">
+                <a href="services.html#T-Shirt" class="bentoks-service-card" aria-label="Explore T-Shirt Printing">
+                    <img class="bentoks-service-image" src="src/New/40-40-tshirts.jpeg" alt="T-Shirt Printing by Bentoks Investments in Eswatini" loading="lazy" decoding="async" />
+                    <span class="bentoks-service-overlay" aria-hidden="true"></span>
+                    <span class="bentoks-service-content">
+                        <span class="bentoks-service-kicker">BENTOKS INVESTMENTS</span>
+                        <span class="bentoks-service-title">T-Shirt Printing</span>
+                        <span class="bentoks-service-description">Custom printed apparel for businesses, teams, events and personal use.</span>
+                        <span class="bentoks-service-link">Explore service <span class="material-icons" aria-hidden="true">arrow_forward</span></span>
+                    </span>
                 </a>
-                <a href="services.html" class="group bg-[#FFFFFF] border border-[#003399]/6 hover:border-[#003399]/25 p-8 cursor-pointer transition-all duration-300 hover:bg-[#F5F7FA] hover:shadow-xl hover:shadow-[#003399]/5">
-                    <div class="w-11 h-11 border border-[#003399]/10 group-hover:border-[#003399]/40 flex items-center justify-center mb-6 transition-colors">
-                        <span class="material-icons text-[#1A202C]/30 group-hover:text-[#CC0000]">image</span>
-                    </div>
-                    <h3 class="font-heading font-semibold text-lg text-[#1A202C] mb-3 group-hover:text-[#003399] transition-colors">Banners & Posters</h3>
-                    <p class="text-[#1A202C]/35 text-sm leading-relaxed group-hover:text-[#1A202C]/55">Vibrant banners for your business or event.</p>
-                    <div class="mt-5 flex items-center gap-1.5 text-[#003399] text-xs tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity font-medium">Learn more <span class="material-icons icon-sm">arrow_forward</span></div>
+                <a href="services.html#Banners" class="bentoks-service-card" aria-label="Explore Banners & Posters">
+                    <img class="bentoks-service-image" src="src/New/pullup-banners-2.jpeg" alt="Banners & Posters by Bentoks Investments in Eswatini" loading="lazy" decoding="async" />
+                    <span class="bentoks-service-overlay" aria-hidden="true"></span>
+                    <span class="bentoks-service-content">
+                        <span class="bentoks-service-kicker">BENTOKS INVESTMENTS</span>
+                        <span class="bentoks-service-title">Banners & Posters</span>
+                        <span class="bentoks-service-description">Eye-catching banners and posters produced to make your message stand out.</span>
+                        <span class="bentoks-service-link">Explore service <span class="material-icons" aria-hidden="true">arrow_forward</span></span>
+                    </span>
                 </a>
-                <a href="services.html" class="group bg-[#FFFFFF] border border-[#003399]/6 hover:border-[#003399]/25 p-8 cursor-pointer transition-all duration-300 hover:bg-[#F5F7FA] hover:shadow-xl hover:shadow-[#003399]/5">
-                    <div class="w-11 h-11 border border-[#003399]/10 group-hover:border-[#003399]/40 flex items-center justify-center mb-6 transition-colors">
-                        <span class="material-icons text-[#1A202C]/30 group-hover:text-[#CC0000]">wallpaper</span>
-                    </div>
-                    <h3 class="font-heading font-semibold text-lg text-[#1A202C] mb-3 group-hover:text-[#003399] transition-colors">Billboards Printing</h3>
-                    <p class="text-[#1A202C]/35 text-sm leading-relaxed group-hover:text-[#1A202C]/55">High quality, eye-catching billboard designs for impactful advertising.</p>
-                    <div class="mt-5 flex items-center gap-1.5 text-[#003399] text-xs tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity font-medium">Learn more <span class="material-icons icon-sm">arrow_forward</span></div>
+                <a href="services.html#Billboards" class="bentoks-service-card" aria-label="Explore Billboards Printing">
+                    <img class="bentoks-service-image" src="src/Large format printing.jpg" alt="Billboards Printing by Bentoks Investments in Eswatini" loading="lazy" decoding="async" />
+                    <span class="bentoks-service-overlay" aria-hidden="true"></span>
+                    <span class="bentoks-service-content">
+                        <span class="bentoks-service-kicker">BENTOKS INVESTMENTS</span>
+                        <span class="bentoks-service-title">Billboards Printing</span>
+                        <span class="bentoks-service-description">Large-format print production for bold, high-visibility advertising.</span>
+                        <span class="bentoks-service-link">Explore service <span class="material-icons" aria-hidden="true">arrow_forward</span></span>
+                    </span>
                 </a>
-                <a href="services.html" class="group bg-[#FFFFFF] border border-[#003399]/6 hover:border-[#003399]/25 p-8 cursor-pointer transition-all duration-300 hover:bg-[#F5F7FA] hover:shadow-xl hover:shadow-[#003399]/5">
-                    <div class="w-11 h-11 border border-[#003399]/10 group-hover:border-[#003399]/40 flex items-center justify-center mb-6 transition-colors">
-                        <span class="material-icons text-[#1A202C]/30 group-hover:text-[#CC0000]">brush</span>
-                    </div>
-                    <h3 class="font-heading font-semibold text-lg text-[#1A202C] mb-3 group-hover:text-[#003399] transition-colors">Custom Designs</h3>
-                    <p class="text-[#1A202C]/35 text-sm leading-relaxed group-hover:text-[#1A202C]/55">Creative, custom-designed prints tailored to your needs.</p>
-                    <div class="mt-5 flex items-center gap-1.5 text-[#003399] text-xs tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity font-medium">Learn more <span class="material-icons icon-sm">arrow_forward</span></div>
+                <a href="services.html#Custom" class="bentoks-service-card" aria-label="Explore Custom Designs">
+                    <img class="bentoks-service-image" src="src/New/carbranding-destiny.jpeg" alt="fleet branding Bentoks Investments in Eswatini" loading="lazy" decoding="async" />
+                    <span class="bentoks-service-overlay" aria-hidden="true"></span>
+                    <span class="bentoks-service-content">
+                        <span class="bentoks-service-kicker">BENTOKS INVESTMENTS</span>
+                        <span class="bentoks-service-title">Vehicle Branding & Wrap</span>
+                        <span class="bentoks-service-description">Professional fleet graphics and commercial vehicle wrapping for corporate branding.</span>
+                        <span class="bentoks-service-link">Explore service <span class="material-icons" aria-hidden="true">arrow_forward</span></span>
+                    </span>
                 </a>
             </div>
         </div>
@@ -599,8 +836,6 @@
     <section class="py-24 lg:py-32 bg-[#F5F7FA] relative overflow-hidden">
         <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#003399]/20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#003399]/10 to-transparent"></div>
-        <div class="absolute top-20 right-10 w-40 h-40 border border-[#003399]/5 rounded-full"></div>
-        <div class="absolute bottom-20 left-10 w-60 h-60 border border-[#CC0000]/5 rounded-full"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div class="text-center mb-12">
@@ -789,8 +1024,6 @@
             <div class="absolute top-0 bottom-0 w-px bg-[#FFFFFF]/10" style="left: 25%;"></div>
             <div class="absolute top-0 bottom-0 w-px bg-[#FFFFFF]/10" style="left: 50%;"></div>
             <div class="absolute top-0 bottom-0 w-px bg-[#FFFFFF]/10" style="left: 75%;"></div>
-            <div class="absolute top-1/2 left-1/4 w-40 h-40 border border-white/5 rounded-full"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-20 h-20 border border-white/5 rounded-full"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-[#FFFFFF]/15">
@@ -808,8 +1041,6 @@
             <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=700&fit=crop&auto=format" alt="Team collaboration" class="w-full h-full object-cover opacity-12" />
             <div class="absolute inset-0 bg-gradient-to-b from-[#F5F7FA]/60 to-[#F5F7FA]/80"></div>
             <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#003399] to-transparent"></div>
-            <div class="absolute top-20 right-20 w-32 h-32 border border-[#003399]/10 rounded-full"></div>
-            <div class="absolute bottom-20 left-20 w-24 h-24 border border-[#CC0000]/10 rounded-full"></div>
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div class="inline-block text-[#003399] text-xs tracking-[0.25em] uppercase font-medium mb-4 border-l-2 border-[#003399] pl-3">Let's Work Together</div>

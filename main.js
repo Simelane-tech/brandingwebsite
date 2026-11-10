@@ -2,24 +2,58 @@
 // Inject shared styles first
 const sharedStyles = document.createElement('style');
 sharedStyles.textContent = `
-/* Core Styles */
-* { scroll-behavior: smooth; box-sizing: border-box; }
-body { font-family: 'DM Sans', sans-serif; background-color: #F5F7FA; color: #1A202C; line-height: 1.6; padding-top: 80px; }
-h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
-.material-icons { vertical-align: middle; }
-.icon-sm { font-size: 18px; }
+/* Global layout: keep every page the same width */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-/* Navbar */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F5F7FA;
+    color: #1A202C;
+    line-height: 1.6;
+    padding-top: 80px;
+    overflow-x: hidden;
+}
+
+/* Shared header: consistent full-width positioning */
+my-header {
+    display: block;
+    width: 100%;
+}
+
 #navbar {
     position: fixed !important;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100%;
     z-index: 9999;
     transition: all 0.3s ease;
     background-color: transparent;
-    width: 100%;
 }
+
+#navbar > nav {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
+.material-icons { vertical-align: middle; }
+.icon-sm { font-size: 18px; }
+
+/* Navbar */
+
 #navbar.navbar-scrolled {
     background-color: rgba(245, 247, 250, 0.96) !important;
     backdrop-filter: blur(12px);
